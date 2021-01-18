@@ -50,7 +50,6 @@ async def on_message(message):
                         ris.add_field(name='Year: ',value=str(rd[2]),inline=True)
                         ris.add_field(name='Plot synopsis: ',value=str(rd[3]),inline=False)
                         ris.add_field(name='Trailer',value='[Trailer]' +'(' + str(rd[5]) + ')',inline=True)
-                        # ris.add_field(name='Download',value='[Magnet]'+ '(' + str(rd[6]) + ')',inline=True)
                         ris.set_thumbnail(url=str(rd[4]))
                         ris.set_image(url=str(rd[4]))
                         ris.set_footer(text="Made by Zero")
@@ -63,7 +62,7 @@ async def on_message(message):
                 else:     #else close it
                     await message.add_reaction('❌')
                     await message.add_reaction('🤏')
-                    await message.channel.send('Troppo corto!',delete_after=1.7)   
+                    await message.channel.send('Too short!',delete_after=1.7)   
                 return
 
         if(count > 0):
